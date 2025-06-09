@@ -46,8 +46,8 @@ ul {
 .cabecera-principal {
     background-color: var(--color-blanco);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
+    /*position: sticky;
+    top: 0;*/
     z-index: 80;
     
 }
@@ -347,6 +347,297 @@ ul {
   color: var(--azul-medio);
 }
 
+/* Estilos para la sección de Proceso */
+.proceso-pasos {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.paso {
+  display: flex;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.paso:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 40px;
+  bottom: -20px;
+  width: 2px;
+  background-color: var(--azul-claro);
+  opacity: 0.5;
+}
+
+.circulo-paso {
+  width: 32px;
+  height: 32px;
+  background-color: var(--azul-medio);
+  color: var(--blanco);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.contenido-paso {
+  flex: 1;
+  background-color: var(--azul-suave);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: var(--sombra-caja);
+}
+
+.contenido-paso h3 {
+  margin-top: 0;
+  color: var(--azul-oscuro);
+}
+
+.tiempo-paso {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  color: var(--gris-oscuro);
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+}
+
+.nota-importante {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.8rem;
+  background-color: #fff3cd;
+  color: #856404;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.nota-final-proceso {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: var(--azul-suave);
+  border-left: 4px solid var(--azul-medio);
+  border-radius: 0 6px 6px 0;
+}
+
+/* Estilos para la sección de Costos */
+.tabla-costos {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--gris-claro);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+.fila-titulo, .fila-costo, .fila-total {
+  display: flex;
+  padding: 1rem;
+}
+
+.fila-titulo {
+  background-color: var(--azul-oscuro);
+  color: var(--blanco);
+  font-weight: 600;
+}
+
+.fila-costo {
+  border-bottom: 1px solid var(--gris-claro);
+  transition: var(--transicion);
+}
+
+.fila-costo:hover {
+  background-color: var(--azul-suave);
+}
+
+.fila-total {
+  background-color: var(--azul-suave);
+  font-weight: 600;
+}
+
+.columna-concepto {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.columna-monto {
+  flex: 1;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.columna-descripcion {
+  flex: 3;
+  color: var(--color-texto-claro);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+
+.fila-total .columna-monto {
+  color: var(--azul-oscuro);
+}
+
+.metodos-pago {
+  margin-top: 2rem;
+}
+
+.metodos-pago h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--azul-oscuro);
+}
+
+.lista-metodos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.metodo {
+  flex: 1 1 200px;
+  padding: 1rem;
+  background-color: var(--azul-suave);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.9rem;
+}
+
+.nota-costos {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.nota-importante, .nota-beneficio {
+  padding: 1rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.nota-beneficio {
+  background-color: #e6ffed;
+  color: #22863a;
+}
+
+/* Estilos para la sección de Preguntas Frecuentes */
+.acordeon-preguntas {
+  margin-top: 2rem;
+  border: 1px solid var(--gris-claro);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.pregunta-item {
+  border-bottom: 1px solid var(--gris-claro);
+}
+
+.pregunta-item:last-child {
+  border-bottom: none;
+}
+
+.pregunta-titulo {
+  width: 100%;
+  padding: 1.5rem;
+  background: none;
+  border: none;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  color: var(--azul-oscuro);
+  cursor: pointer;
+  transition: var(--transicion);
+}
+
+.pregunta-titulo:hover {
+  background-color: var(--azul-suave);
+}
+
+.pregunta-titulo i {
+  transition: var(--transicion);
+}
+
+.pregunta-titulo.active i {
+  transform: rotate(180deg);
+}
+
+.pregunta-contenido {
+  padding: 0 1.5rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.pregunta-contenido p {
+  padding-bottom: 1.5rem;
+  margin: 0;
+}
+
+.pregunta-item.active .pregunta-contenido {
+  max-height: 500px;
+}
+
+.contacto-preguntas {
+  margin-top: 3rem;
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--azul-suave);
+  border-radius: 8px;
+}
+
+.contacto-preguntas h3 {
+  color: var(--azul-oscuro);
+  margin-top: 0;
+}
+
+.opciones-contacto {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.boton-contacto {
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  background-color: var(--azul-medio);
+  color: var(--blanco);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  transition: var(--transicion);
+}
+
+.boton-contacto:hover {
+  background-color: var(--azul-oscuro);
+  transform: translateY(-2px);
+}
+
 /* Acciones */
 .acciones-elegantes {
   padding: 1.5rem 2rem;
@@ -499,6 +790,26 @@ ul {
     .main-nav ul {
         justify-content: center;
     }
+    
+    .proceso-pasos {
+        gap: 1rem;
+    }
+    
+    .paso {
+        gap: 1rem;
+    }
+    
+    .contenido-paso {
+        padding: 1rem;
+    }
+    
+    .tabla-costos {
+        font-size: 0.9rem;
+    }
+    
+    .columna-descripcion {
+        font-size: 0.8rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -513,5 +824,37 @@ ul {
     
     .main-nav i {
         margin-right: 0.3rem;
+    }
+    
+    .encabezado-tramite-elegante {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .etiquetas-estado {
+        justify-content: center;
+    }
+    
+    .menu-pestanas {
+        overflow-x: auto;
+    }
+    
+    .pestana-elegante {
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .fila-titulo, .fila-costo, .fila-total {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .columna-concepto, .columna-monto, .columna-descripcion {
+        width: 100%;
+    }
+    
+    .opciones-contacto {
+        flex-direction: column;
     }
 }
