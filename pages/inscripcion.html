@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscripción | Instituto Suiza</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="tramite-style.css">
+    <link rel="stylesheet" href="../styles/tramite-style.css">
 </head>
 <body>
     <header class="cabecera-principal">
         <div class="contenedor-cabecera">
             <div class="logo-container">
-                <img src="./logo-dsi.png" alt="Logo Instituto" class="logo-instituto">
+                <img src="../assets/img/logo-dsi.png" alt="Logo Instituto" class="logo-instituto">
                 <div class="instituto-info">
                     <h1>Instituto de educacion superior tecnologico publico suiza</h1>
                     <p class="lema-instituto">Excelencia académica desde 1985</p>
@@ -23,7 +23,7 @@
                     <li><a href="#"><i class="fas fa-file-alt"></i> Reporte de notas</a></li>
                     <li><a href="#"><i class="fas fa-calendar-check"></i> Asistencia</a></li>
                     <li><a href="#"><i class="fas fa-user-graduate"></i> Reporte alumno</a></li>
-                    <li><a href="./index.html" class="activo"><i class="fas fa-clipboard-list"></i> Trámites</a></li>
+                    <li><a href="../index.html" class="activo"><i class="fas fa-clipboard-list"></i> Trámites</a></li>
                     <li><a href="#"><i class="fas fa-comments"></i> Chat consultas</a></li>
                 </ul>
             </nav>
@@ -38,7 +38,7 @@
 
     <main class="contenedor-elegante">
         <div class="ruta-navegacion">
-            <a href="./index.html"><i class="fas fa-chevron-left"></i> Volver a Trámites</a>
+            <a href="../index.html"><i class="fas fa-chevron-left"></i> Volver a Trámites</a>
             <span>/ Inscripción</span>
         </div>
 
@@ -66,8 +66,7 @@
 
                 <section id="requisitos" class="seccion-pestana mostrar">
                     <h2><span class="numero-seccion">01</span> Documentación Requerida</h2>
-                    
-                    <div class="lista-elegante">
+                                        <div class="lista-elegante">
                         <div class="item-elegante">
                             <div class="icono-item">
                                 <i class="fas fa-file-contract"></i>
@@ -110,10 +109,39 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- contenido existente omitido por brevedad -->
                 </section>
 
                 <section id="proceso" class="seccion-pestana">
-                    <!-- Contenido similar para las otras pestañas -->
+                    <h2><span class="numero-seccion">02</span> Proceso de Inscripción</h2>
+                    <ol class="lista-pasos">
+                        <li>Llena el formulario de inscripción en línea.</li>
+                        <li>Adjunta la documentación requerida.</li>
+                        <li>Espera la validación por parte del departamento académico.</li>
+                        <li>Recibe tu carta de aceptación por correo.</li>
+                        <li>Agenda tu cita presencial o continúa el proceso en línea.</li>
+                    </ol>
+                </section>
+
+                <section id="costos" class="seccion-pestana">
+                    <h2><span class="numero-seccion">03</span> Costos y Pagos</h2>
+                    <ul class="lista-costos">
+                        <li>Matrícula: S/. 150.00</li>
+                        <li>Derecho de Inscripción: S/. 80.00</li>
+                        <li>Seguro estudiantil: S/. 20.00</li>
+                        <li><strong>Total: S/. 250.00</strong></li>
+                    </ul>
+                    <p>Los pagos se realizan en caja del instituto o vía transferencia bancaria.</p>
+                </section>
+
+                <section id="preguntas" class="seccion-pestana">
+                    <h2><span class="numero-seccion">04</span> Preguntas Frecuentes</h2>
+                    <div class="faq">
+                        <p><strong>¿Puedo inscribirme sin el examen de admisión?</strong><br>No, el examen es obligatorio para todos los aspirantes.</p>
+                        <p><strong>¿Puedo pagar en cuotas?</strong><br>Actualmente no ofrecemos pagos fraccionados para inscripción.</p>
+                        <p><strong>¿Qué pasa si no tengo mi acta de nacimiento actualizada?</strong><br>Debes tramitarla antes de continuar con tu proceso.</p>
+                    </div>
                 </section>
             </div>
 
@@ -155,6 +183,20 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+    document.querySelectorAll('.pestana-elegante').forEach(boton => {
+        boton.addEventListener('click', () => {
+            const pestana = boton.getAttribute('data-pestana');
+
+            document.querySelectorAll('.pestana-elegante').forEach(b => b.classList.remove('activa'));
+            boton.classList.add('activa');
+
+            document.querySelectorAll('.seccion-pestana').forEach(seccion => {
+                seccion.classList.remove('mostrar');
+            });
+            document.getElementById(pestana).classList.add('mostrar');
+        });
+    });
+    </script>
 </body>
 </html>
